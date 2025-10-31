@@ -1,6 +1,4 @@
-This is an excellent and critical request. Moving from a single script to a professional, "anti-failure" automation tool requires a significant shift in architecture. A production-grade tool must be **modular, configurable, fault-tolerant, and resumable**.
-
-Here is a review and refactor of the automation solution, followed by the updated `README.md` that incorporates its use.
+This guide provides architectural best practices and a comprehensive framework for migrating Oracle Cloud Infrastructure (OCI) workloads from the **US Ashburn (us-ashburn-1)** region to the **CO Bogotá (sa-bogota-1)** region.
 
 -----
 
