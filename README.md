@@ -148,6 +148,7 @@ Before running, copy `config.json.template` to `config.json` and fill in all val
   "state_file_path": "migration.state.json"
 }
 -----
+```
 
 ## License
 
