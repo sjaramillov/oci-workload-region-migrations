@@ -480,12 +480,10 @@ Here is the revised `README.md`. It has been updated to include a comprehensive 
 -----
 
 ````markdown
-# FEPEP: OCI Workload Migration Guide (US Ashburn to CO Bogotá)
+# OCI Pilots: OCI Workload Migration Guide (US Ashburn to CO Bogotá)
 
 **Version:** 1.0
 **Author:** Sebastián Jaramillo
-**Client:** FEPEP
-**Date:** 08/09/2025
 
 ---
 
@@ -493,7 +491,7 @@ Here is the revised `README.md`. It has been updated to include a comprehensive 
 
 This guide provides architectural best practices and a comprehensive framework for migrating Oracle Cloud Infrastructure (OCI) workloads from the **US Ashburn (us-ashburn-1)** region to the **CO Bogotá (sa-bogota-1)** region.
 
-The primary drivers for this migration (tailored for FEPEP) include:
+The primary drivers for this migration (tailored for OCI Pilots) include:
 
 * **Reduced Latency:** Improve application performance and user experience for South American users (e.g., faster access to patient data in Colombia).
 * **Data Sovereignty & Compliance:** Align with local data protection regulations (e.g., Colombian Law 1581) by hosting sensitive data within national borders.
@@ -522,7 +520,7 @@ This section highlights the critical recommendations detailed in the full guide.
 ### 1. Planning and Assessment
 * **Inventory:** Assess all workload dependencies (VCNs, IAM policies, security lists) using OCI CLI (`oci search resource free-text-search`) or OCI Resource Manager.
 * **Costing:** Model data egress costs from Ashburn. **Note: Egress fees apply.** Use the OCI Cost Analysis tool and Budgets.
-* **Compliance:** Validate that the Bogotá region meets all data sovereignty requirements for FEPEP's workloads (e.g., Law 1581 for healthcare data).
+* **Compliance:** Validate that the Bogotá region meets all data sovereignty requirements for OCI Pilots's workloads (e.g., Law 1581 for healthcare data).
 * **Testing:** Measure round-trip time (RTT) between regions to set performance expectations.
 * **Backup:** Perform complete backups of all volumes and databases in Ashburn using the OCI Backup Service before initiating any migration tasks.
 
