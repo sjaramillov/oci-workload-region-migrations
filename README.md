@@ -149,6 +149,59 @@ Before running, copy `config.json.template` to `config.json` and fill in all val
 }
 
 ```
+migration_bucket_name: Must be an existing Object Storage bucket in the source (Ashburn) region.
+
+target_ad: Must be a valid Availability Domain in the target (Bogotá) region (e.g., EMuz:SA-BOGOTA-1-AD-1).
+
+target_subnet_id: The OCID of the subnet where the new instance will be launched.
+
+Usage
+The tool is run from the command line.
+
+1. Run a Dry Run (Recommended First): Simulate the entire process. This will not execute any commands but will show you the steps it would take.
+
+Bash
+
+python3 migrate.py --config config.json --workflow compute --dry-run
+2. Execute the Migration: Run the compute workflow. The tool will log all progress and automatically save its state.
+
+Bash
+
+python3 migrate.py --config config.json --workflow compute
+3. Recovering from Failure: If the script fails at "Step 3/5", simply rerun the exact same command. The tool will read migration.state.json, see that Steps 1 and 2 are complete, and resume at Step 3.
+
+Bash
+
+# Rerunning after a failure
+python3 migrate.py --config config.json --workflow compute
+[INFO] Found existing state file: migration.state.json. Resuming progress. [INFO] [Step 1/5] SKIPPED - Source image already created: ocid1.image... [INFO] [Step 2/5] SKIPPED - Source image is already AVAILABLE. [INFO] [Step 3/5] Exporting image ocid1.image...
+
+Automation Best Practices
+NEVER Run in Production First: Always test this tool and your config.json in a non-production (staging) compartment first.
+
+Monitor Costs: This tool creates new resources (Images, Instances) that incur costs.
+
+Post-Migration Cleanup: The tool does not clean up resources. After you validate the new instance in Bogotá, you must manually delete:
+
+The source custom image in Ashburn.
+
+The target custom image in Bogotá.
+
+The exported image object (.img) from your Object Storage bucket.
+
+The original instance in Ashburn (once decommissioned).
+
+Review migration.log: If an error occurs that the script cannot recover from, the migration.log file will contain the full debug trace and error message from the OCI CLI.
+
+⚠️ Key Considerations and Risks
+Costs: Data egress from us-ashburn-1 is a primary cost factor. Compress data and use OCI Budgets to track spending.
+
+Latency: Inter-region latency during replication will be high (100-200 ms). Plan for this during data sync. Post-migration, latency for Colombian users should drop significantly (~8 ms).
+
+Data Integrity: Use checksums and thorough application-level validation post-cutover to prevent data loss or corruption.
+
+Regulatory Hurdles: Ensure full legal and compliance sign-off for cross-border data transfer before moving any protected health information (PHI) or personally identifiable information (PII).
+
 -----
 ## License
 
