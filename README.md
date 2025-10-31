@@ -1,6 +1,6 @@
 #  OCI Workload Migration Guide (US Ashburn to CO Bogotá)
 
-**Version:** 1.0
+**Version:** 2.0
 **Author:** Sebastián Jaramillo
 
 ---
