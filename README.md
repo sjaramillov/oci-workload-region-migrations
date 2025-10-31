@@ -163,15 +163,16 @@ The tool is run from the command line.
 ```Bash
 
 python3 migrate.py --config config.json --workflow compute --dry-run
-2. Execute the Migration: Run the compute workflow. The tool will log all progress and automatically save its state.
 ```
+2. Execute the Migration: Run the compute workflow. The tool will log all progress and automatically save its state.
+
 ```Bash
 
 python3 migrate.py --config config.json --workflow compute
-3. Recovering from Failure: If the script fails at "Step 3/5", simply rerun the exact same command. The tool will read migration.state.json, see that Steps 1 and 2 are complete, and resume at Step 3.
 ```
-```Bash
+3. Recovering from Failure: If the script fails at "Step 3/5", simply rerun the exact same command. The tool will read migration.state.json, see that Steps 1 and 2 are complete, and resume at Step 3.
 
+```Bash
 # Rerunning after a failure
 python3 migrate.py --config config.json --workflow compute
 ```
