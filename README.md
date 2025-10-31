@@ -1,7 +1,7 @@
 # oci-workload-region-migrations
 Migrate your workload between oci regions
 
-# FEPEP: OCI Workload Migration Guide (US Ashburn to CO Bogotá)
+# GOAL: OCI Workload Migration Guide (US Ashburn to CO Bogotá)
 
 **Version:** 1.0
 **Author:** Sebastián Jaramillo
@@ -12,7 +12,7 @@ Migrate your workload between oci regions
 
 This guide provides architectural best practices and a comprehensive framework for migrating Oracle Cloud Infrastructure (OCI) workloads from the **US Ashburn (us-ashburn-1)** region to the **CO Bogotá (sa-bogota-1)** region.
 
-The primary drivers for this migration (tailored for FEPEP) include:
+The primary drivers for this migration (tailored for Customers) include:
 
 * **Reduced Latency:** Improve application performance and user experience for South American users (e.g., faster access to patient data in Colombia).
 * **Data Sovereignty & Compliance:** Align with local data protection regulations (e.g., Colombian Law 1581) by hosting sensitive data within national borders.
