@@ -147,9 +147,9 @@ Before running, copy `config.json.template` to `config.json` and fill in all val
   "new_instance_name": "migrated-app-server-bogota",
   "state_file_path": "migration.state.json"
 }
------
-```
 
+```
+-----
 ## License
 
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE.md) file for full details.
