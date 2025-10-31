@@ -1,10 +1,8 @@
-automation solution, followed by the updated `README.md` that incorporates its use.
-
 -----
 
 ## 🚀 The Professional Automation Tool: Review & Refactor
 
-The original script was a linear template. A professional tool separates **configuration**, **state**, **core logic**, and **execution**.
+A professional tool separates **configuration**, **state**, **core logic**, and **execution**.
 
 This refactor introduces several key "anti-failure" concepts:
 
